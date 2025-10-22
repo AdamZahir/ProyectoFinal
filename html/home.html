@@ -1,0 +1,27 @@
+<?php
+session_start();
+
+// Verificar si el usuario ha iniciado sesión
+if (!isset($_SESSION['nombre'])) {
+    header("Location: login.php");
+    exit();
+}
+?>
+
+<!-- Contenido de la página principal -->
+<h1>Bienvenido/a, <?php echo $_SESSION['nombre']; ?> </h1>
+
+<nav>
+    <ul>
+        <li><a href="enlace1.php">Enlace 1</a></li>
+        <li><a href="enlace2.php">Enlace 2</a></li>
+        <li><a href="enlace3.php">Enlace 3</a></li>
+    </ul>
+</nav>
+
+<p> contenidoo contenidoo</p>
+
+<!-- Botón para cerrar sesión -->
+<form action="logout.php" method="POST">
+    <button type="submit">Cerrar sesión</button>
+</form>
