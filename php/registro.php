@@ -1,5 +1,5 @@
 <?php
-// CONECTAR A LA BASE 
+// CONECTAR A LA BASE
 $host = "fdb1034.awardspace.net";
 $user = "4667282_votacionespagina";
 $pass = "tn9mDRYxtEeSKG!";
@@ -13,13 +13,14 @@ if ($conn->connect_error) {
 
 $mensajeError = "";
 
+// LÓGICA DEL FORMULARIO
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $nombre = $_POST['nombre'];
     $carrera = $_POST['carrera'];
     $correo = $_POST['correo'];
     $contrasena = password_hash($_POST['contrasena'], PASSWORD_DEFAULT);
 
-    // VERIFICAR CORREO
+    // VERIFICAR SI EL CORREO YA EXISTE
     $verificar = $conn->query("SELECT * FROM registrados WHERE correo = '$correo'");
 
     if ($verificar->num_rows > 0) {
@@ -40,9 +41,20 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 $conn->close();
 ?>
 
-<!-- FORMULARIO ------------ -->
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registro</title>
+    <link rel="stylesheet" href="estilos.css">
+</head>
+<body>
+
 <main>
   <div class="contenedor-formulario">
+    <h1>Registrarse</h1>
+
     <form method="POST" action="">
         <label>Nombre Completo:</label><br>
         <input type="text" name="nombre" required><br><br>
@@ -56,17 +68,19 @@ $conn->close();
         <label>Contraseña:</label><br>
         <input type="password" name="contrasena" required><br><br>
 
-        <button class="enviar" type="submit">Entrar</button>
+        <button class="enviar" type="submit">Registrarse</button>
 
         <p class="registro-texto">
             ¿Ya tienes cuenta? 
             <a href="login.php">Inicia sesión aquí</a>
         </p>
 
-        <!-- Mostrar mensaje de error -->
         <?php if (!empty($mensajeError)): ?>
-            <p style="color:red; font-weight:bold;"><?php echo $mensajeError; ?></p>
+            <p class="error"><?php echo $mensajeError; ?></p>
         <?php endif; ?>
     </form>
   </div>
 </main>
+
+</body>
+</html>
