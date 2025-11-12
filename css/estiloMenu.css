@@ -1,0 +1,369 @@
+@import url('https://fonts.googleapis.com/css2?family=Arimo:wght@400;500;600;700&display=swap');
+
+/* --- ESTILOS GENERALES --- */
+body {
+    margin: 0;
+    font-family: 'Arimo', 'Segoe UI', sans-serif;
+    background-color: #F9FAFB;
+    color: #001219;
+}
+
+/* Encabezados */
+h1, h2 {
+    color: #3B82F6;
+    margin-bottom: 20px;
+    font-size: 2em;
+}
+
+/* --- ENCABEZADO --- */
+header {
+    background-color: #3B82F6;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 40px;
+    color: white;
+}
+
+header img {
+    height: 50px;
+}
+
+/* --- BOTONES --- */
+.botones {
+    display: flex;
+    gap: 10px; 
+}
+
+.botones button {
+    background-color: #FACC15;
+    border: none;
+    padding: 8px 16px;
+    font-weight: bold;
+    cursor: pointer;
+    display: flex;
+    align-items: center; 
+}
+
+.botones button .icono {
+    width: 20px;
+    height: 20px;
+    margin-right: 8px; 
+}
+
+.botones button:hover {
+    background-color: #1a2a41;
+    color: white;
+}
+ 
+.botones a {
+    text-decoration: none; /* Elimina el subrayado de los enlaces */
+}
+
+/* --- RESPONSIVO --- */
+@media (max-width: 900px) {
+    .botones button span {
+        display: none; /* Oculta el texto en pantallas pequeñas */
+    }
+
+    .botones button .icono {
+        display: inline-block; /* Muestra solo el ícono */
+    }
+}
+
+@media (min-width: 901px) {
+    .botones button .icono {
+        display: none; /* Oculta los íconos en pantallas grandes */
+    }
+}
+
+/* --- MENÚ PRINCIPAL --- */
+nav {
+    background-color: #1a2a41;
+    text-align: center;
+    padding: 10px 0;
+    position: sticky;
+    top: 0;
+    z-index: 5;
+}
+
+nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: inline-flex;
+    gap: 40px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: 500;
+}
+
+nav ul li a:hover {
+    color: #FACC15;
+}
+
+/* Icono hamburguesa */
+.menu-hamburguesa {
+    display: none;
+    font-size: 30px;
+    color: white;
+    cursor: pointer;
+}
+
+/* Estilos para pantallas pequeñas */
+@media (max-width: 900px) {
+    .menu {
+        display: none; 
+        flex-direction: column;
+        gap: 20px;
+        align-items: center;
+        background-color: #1a2a41;
+        padding: 20px 0;
+        width: 100%;
+        position: absolute;
+        top: 70px;
+        left: 0;
+    }
+
+    .menu-hamburguesa {
+        display: block; /* Muestra el icono de hamburguesa en pantallas pequeñas */
+    }
+
+    .menu.show {
+        display: flex; /* Muestra el menú cuando se activa la clase 'show' */
+    }
+
+    nav ul {
+        display: none; /* Escondemos el menú para pantallas grandes */
+    }
+}
+
+@media (min-width: 901px) {
+    nav ul {
+        display: inline-flex; /* Mostrar menú en pantallas grandes */
+    }
+        
+    .menu-hamburguesa {
+        display: none; 
+    }
+}
+
+/* --- MENÚ (SECCIÓN PRINCIPAL) --- */
+.menu-container {
+    padding: 20px;
+}
+
+.menu-container h1 {
+    text-align: center;
+    font-size: 2em;
+    margin-bottom: 30px;
+}
+
+.menu-container .menu-descripcion {
+    text-align: center;
+    font-size: 1.2em;
+    color: #001219;
+}
+
+/* --- CATEGORÍAS DEL MENÚ --- */
+.menu-category {
+    margin-bottom: 40px;
+}
+
+.menu-category h2 {
+    font-size: 1.6em;
+    margin-bottom: 15px;
+    color: #1a2a41;
+    position: relative;
+    display: inline-block;
+}
+
+/* Línea amarilla  */
+.menu-category h2::after {
+    content: "";
+    display: block;
+    width: 60px;
+    height: 4px;
+    background-color: #FACC15;
+    margin-top: 6px;
+    border-radius: 2px;
+}
+
+/* --- TARJETAS DEL MENÚ --- */
+.menu-items {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.menu-card {
+    width: 30%;
+    background-color: #ffffff;
+    padding: 15px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    border: 2px solid #1a2a41;
+    text-align: center;
+    font-family: 'Arimo', sans-serif;
+}
+
+.menu-card img {
+    width: 300px;
+    height: 200px;
+    object-fit: cover;
+}
+
+.menu-card h3 {
+    font-size: 1.2em;
+    margin: 10px 0;
+    color: #000000;
+    position: relative;
+}
+
+/* Línea decorativa------------------------ */
+.menu-card h3::after {
+    content: "";
+    display: block;
+    width: 40px;
+    height: 3px;
+    background-color: #FACC15;
+    margin: 6px auto 0;
+    border-radius: 2px;
+}
+
+.menu-card p {
+    font-size: 1em;
+    color: #000000;
+}
+
+/* --- ESTILO PARA EL PRECIO -------------------------- */
+.menu-card .precio {
+    background-color: #FACC15;
+    padding: 5px 15px;
+    border-radius: 20px;
+    font-weight: bold;
+    color: #1a2a41;
+    margin-top: 10px;
+}
+
+/* Efecto hover */
+.menu-card:hover {
+    background-color: #1a2a41;
+}
+
+.menu-card:hover h3 {
+    color: #FACC15;
+}
+
+.menu-card:hover p {
+    color: #ffffff;
+}
+
+.menu-card:hover .precio {
+    background-color: #ffffff;
+    color: #1a2a41;
+}
+
+/* --- FOOTER --- */
+footer {
+    background-color: #1a2a41;
+    color: white;
+    font-family: 'Arimo', sans-serif;
+    margin-top: 80px;
+    padding-top: 40px;
+}
+
+/* Contenedor principal del footer */
+.footer-contenedor {
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    text-align: left;
+    padding: 20px 10%;
+    gap: 40px;
+}
+
+/* Logo y descripción */
+.footer-logo {
+    max-width: 250px;
+}
+
+.footer-logo img {
+    width: 80px;
+    height: auto;
+    margin-bottom: 10px;
+}
+
+.footer-logo p {
+    font-size: 0.95em;
+    color: #ffffff;
+    line-height: 1.5;
+}
+
+/* Contacto */
+.footer-contacto h3,
+.footer-redes h3 {
+    color: #FACC15;
+    margin-bottom: 10px;
+}
+
+.footer-contacto p {
+    margin: 6px 0;
+    font-size: 0.95em;
+}
+
+/* Redes sociales */
+.footer-redes .iconos-redes {
+    display: flex;
+    gap: 15px;
+    margin-top: 10px;
+}
+
+.footer-redes .icono {
+    width: 35px;
+    height: 35px;
+    display: inline-block;
+    background-color: #FACC15;
+    border-radius: 50%;
+    transition: 0.3s ease;
+    background-size: 60%;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.footer-redes .facebook { background-image: url('imagenes/facebook.png'); }
+.footer-redes .instagram { background-image: url('imagenes/instagram.png'); }
+.footer-redes .twitter { background-image: url('imagenes/twitter.png'); }
+.footer-redes .whatsapp { background-image: url('imagenes/whatsapp.png'); }
+
+.footer-redes .icono:hover {
+    background-color: #ffffff;
+    transform: none;
+}
+
+/* Derechos */
+.footer-derechos {
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
+    text-align: center;
+    padding: 15px;
+    background-color: #001219;
+    font-size: 0.9em;
+    color: #ffffff;
+}
+
+/* --- RESPONSIVO -------------------------- */
+@media (max-width: 900px) {
+    .footer-contenedor {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+    .footer-contacto, .footer-redes, .footer-logo {
+        max-width: 100%;
+    }
+}

@@ -1,0 +1,326 @@
+/* Fuente Arimo desde Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Arimo:wght@400;700&display=swap');
+
+body {
+    margin: 0;
+    font-family: 'Arimo', sans-serif;
+    background-color: #F9FAFB;
+    color: #001219;
+}
+
+h1, h2 {
+    margin: 0;
+}
+
+/* --- ENCABEZADO --- */
+header {
+    background-color: #3B82F6;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 40px;
+    color: white;
+}
+
+header img {
+    height: 50px;
+}
+
+/* --- BOTONES --- */
+.botones {
+    display: flex;
+    gap: 10px; 
+}
+
+.botones button {
+    background-color: #FACC15;
+    border: none;
+    padding: 8px 16px;
+    font-weight: bold;
+    cursor: pointer;
+    display: flex;
+    align-items: center; 
+}
+
+.botones button .icono {
+    width: 20px;
+    height: 20px;
+    margin-right: 8px; 
+}
+
+.botones button:hover {
+    background-color: #1a2a41;
+    color: white;
+}
+
+.botones a {
+    text-decoration: none; /* Elimina el subrayado de los enlaces */
+}
+
+/* --- RESPONSIVO --- */
+@media (max-width: 900px) {
+    .botones button span {
+        display: none; /* Oculta el texto en pantallas pequeñas */
+    }
+
+    .botones button .icono {
+        display: inline-block; /* Muestra solo el ícono */
+    }
+}
+
+@media (min-width: 901px) {
+    .botones button .icono {
+        display: none; /* Oculta los íconos en pantallas grandes */
+    }
+}
+
+/* --- MENÚ PRINCIPAL --- */
+nav {
+    background-color: #1a2a41;
+    text-align: center;
+    padding: 10px 0;
+    position: sticky;
+    top: 0;
+    z-index: 5;
+}
+
+nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: inline-flex;
+    gap: 40px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: 500;
+}
+
+nav ul li a:hover {
+    color: #FACC15;
+}
+
+/* Icono hamburguesa */
+.menu-hamburguesa {
+    display: none;
+    font-size: 30px;
+    color: white;
+    cursor: pointer;
+}
+
+/* Estilos para pantallas pequeñas */
+@media (max-width: 900px) {
+    .menu {
+        display: none; 
+        flex-direction: column;
+        gap: 20px;
+        align-items: center;
+        background-color: #1a2a41;
+        padding: 20px 0;
+        width: 100%;
+        position: absolute;
+        top: 70px;
+        left: 0;
+    }
+
+    .menu-hamburguesa {
+        display: block; /* Muestra el icono de hamburguesa en pantallas pequeñas */
+    }
+
+    .menu.show {
+        display: flex; /* Muestra el menú cuando se activa la clase 'show' */
+    }
+
+    nav ul {
+        display: none; /* Escondemos el menú para pantallas grandes */
+    }
+}
+
+@media (min-width: 901px) {
+    nav ul {
+        display: inline-flex; /* Mostrar menú en pantallas grandes */
+    }
+        
+    .menu-hamburguesa {
+        display: none; /* Ocultamos el icono de hamburguesa en pantallas grandes */
+    }
+}
+
+
+/* FOOTER -------------------- */
+footer {
+    background-color: #1a2a41;
+    color: white;
+    font-family: 'Arimo', sans-serif;
+    margin-top: 80px;
+    padding-top: 40px;
+}
+
+/* Contenedor principal */
+.footer-contenedor {
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    text-align: left;
+    padding: 20px 10%;
+    gap: 40px;
+}
+
+/* Logo y descripción */
+.footer-logo {
+    max-width: 250px;
+}
+.footer-logo img {
+    width: 80px;
+    height: auto;
+    margin-bottom: 10px;
+}
+.footer-logo p {
+    font-size: 0.95em;
+    color: #ffffff;
+    line-height: 1.5;
+}
+
+/* Contacto */
+.footer-contacto h3,
+.footer-redes h3 {
+    color: #FACC15;
+    margin-bottom: 10px;
+}
+.footer-contacto p {
+    margin: 6px 0;
+    font-size: 0.95em;
+}
+
+/* Redes sociales */
+.footer-redes .iconos-redes {
+    display: flex;
+    gap: 15px;
+    margin-top: 10px;
+}
+.footer-redes .icono {
+    width: 35px;
+    height: 35px;
+    display: inline-block;
+    background-color: #FACC15;
+    border-radius: 50%;
+    transition: 0.3s ease;
+    background-size: 60%;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.footer-redes .facebook { background-image: url('imagenes/facebook.png'); }
+.footer-redes .instagram { background-image: url('imagenes/instagram.png'); }
+.footer-redes .twitter { background-image: url('imagenes/twitter.png'); }
+.footer-redes .whatsapp { background-image: url('imagenes/whatsapp.png'); }
+
+.footer-redes .icono:hover {
+    background-color: #ffffff;   
+    transform: none; 
+}
+
+/* Derechos */
+.footer-derechos {
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
+    text-align: center;
+    padding: 15px;
+    background-color: #001219;
+    font-size: 0.9em;
+    color: #ffffff;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+    .footer-contenedor {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+    .footer-contacto, .footer-redes, .footer-logo {
+        max-width: 100%;
+    }
+}
+
+
+/* CONTENIDO SOBRE NOSOTROS ----------------------------- */
+
+.sobre-nosotros {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 100px 10%;
+    gap: 60px;
+    background-color: #F9FAFB;
+}
+
+/* Texto */
+.sobre-texto {
+    flex: 1;
+    text-align: left;
+    color: #001219;
+}
+
+.sobre-texto h2 {
+    font-size: 2.4em;
+    color: #3B82F6;
+    margin-bottom: 25px;
+    position: relative;
+}
+
+.sobre-texto h2::after {
+    content: "";
+    position: absolute;
+    bottom: -8px;
+    left: 0;
+    width: 80px;
+    height: 4px;
+    background-color: #FACC15;
+    border-radius: 3px;
+}
+
+.sobre-texto p {
+    font-size: 1.05em;
+    line-height: 1.9;
+    margin-bottom: 20px;
+    color: #1a2a41;
+}
+
+/* Imagen */
+.sobre-imagen {
+    flex: 0.9;
+    display: flex;
+    justify-content: center;
+}
+
+.sobre-imagen img {
+    width: 100%;
+    max-width: 420px;
+    height: auto;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+    object-fit: cover;
+}
+
+/* Responsivo */
+@media (max-width: 950px) {
+    .sobre-nosotros {
+        flex-direction: column;
+        text-align: center;
+        padding: 70px 5%;
+    }
+
+    .sobre-texto h2::after {
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+    .sobre-imagen img {
+        max-width: 80%;
+        margin-top: 30px;
+    }
+}
+
