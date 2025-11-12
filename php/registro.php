@@ -46,26 +46,26 @@ $conn->close();
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Registro</title>
-    <link rel="stylesheet" href="estilos.css">
+    <title>Registro | Monte Sion</title>
+         <link href="https://fonts.googleapis.com/css2?family=Arimo:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="estilodoble.css">
 </head>
 <body>
 
-<main>
-  <div class="contenedor-formulario">
-    <h1>Registrarse</h1>
+  <div class="contenedor-padre">
+      <h1>Registrate</h1>
 
-    <form method="POST" action="">
-        <label>Nombre Completo:</label><br>
+      <form class="formulario" method="POST" action="">
+        <label>Nombre Completo:</label>
         <input type="text" name="nombre" required><br><br>
 
-        <label>Carrera Universitaria:</label><br>
+        <label>Carrera Universitaria:</label>
         <input type="text" name="carrera" required><br><br>
 
-        <label>Correo electrónico:</label><br>
+        <label>Correo electrónico:</label>
         <input type="email" name="correo" required><br><br>
 
-        <label>Contraseña:</label><br>
+        <label>Contraseña:</label>
         <input type="password" name="contrasena" required><br><br>
 
         <button class="enviar" type="submit">Registrarse</button>
@@ -78,9 +78,9 @@ $conn->close();
         <?php if (!empty($mensajeError)): ?>
             <p class="error"><?php echo $mensajeError; ?></p>
         <?php endif; ?>
-    </form>
-  </div>
-</main>
+        </div>          
+      </form>
+    </div>
 
 </body>
 </html>
