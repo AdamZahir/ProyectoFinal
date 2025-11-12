@@ -45,10 +45,7 @@ session_start();
         <li><a href="SobreNosotros.php">Sobre Nosotros</a></li>
     </ul>
 </nav>
-
-        
-        
-        
+ 
 
     <!-- SECCIÓN SOBRE NOSOTROS -->
     <section class="sobre-nosotros">
