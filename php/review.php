@@ -1,8 +1,7 @@
 <?php
 session_start(); // Asegura que la sesión está iniciada
 
-// Configura la zona horaria para que la hora se guarde correctamente
-date_default_timezone_set('America/Mexico_City'); // Establece la zona horaria correcta
+date_default_timezone_set('America/Mexico_City'); 
 
 // Conexión a la base de datos
 $host = "fdb1034.awardspace.net";
