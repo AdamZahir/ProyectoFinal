@@ -25,9 +25,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_SESSION['nombre'])) {
         $comentario = $_POST['comentario'];
         $calificacion = $_POST['calificacion'];
 
-        // Asegúrate de validar que el comentario no esté vacío
+        // comentario no esté vacío
         if (!empty($comentario) && !empty($calificacion)) {
-            // Guarda solo la fecha (sin la hora)
+        
             $sql = "INSERT INTO comentarios (usuario_id, comentario, calificacion, fecha)
                     VALUES ('$usuario_id', '$comentario', '$calificacion', CURDATE())";
 
