@@ -13,6 +13,18 @@ session_start();
     <link rel="stylesheet" href="estiloHome.css">
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 </head>
+        
+        <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-DMLCKVMV57"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-DMLCKVMV57');
+</script>
+        
+        
 <body>
 
     <!-- Encabezado -->
@@ -91,6 +103,16 @@ session_start();
         <div class="carrusel-item">
             <img src="imagenes/januca.jpg" alt="Banner 3" class="imagen-carrusel">
         </div>
+         <div class="carrusel-item">
+            <img src="imagenes/bebidas.png" alt="Banner 4" class="imagen-carrusel">
+        </div>
+        <div class="carrusel-item">
+            <img src="imagenes/sugerencia.png" alt="Banner 5" class="imagen-carrusel">
+        </div>
+            
+            
+            
+            
         <button class="flecha izquierda">❬</button>
         <button class="flecha derecha">❭</button>
     </section>
